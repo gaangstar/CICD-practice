@@ -15,4 +15,12 @@ jobs:
           password: qwer1234
           port: 114
           script:
-            echo test > /tmp/test
+            rm -rf  ./CICD-practice
+            git clone https://github.com/gaangstar/CICD-practice.git
+            cd ./CICD-practice
+            chmod 755 ./gradlew
+            ./gradlew bootJar
+            docker rm -f back
+            docker image prune -f
+            docker build --tag gaangstar/back:latest .
+            docker run -d --name back -p 8080:8080 gaangstar/back:latest
