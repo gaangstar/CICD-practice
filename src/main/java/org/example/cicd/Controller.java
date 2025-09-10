@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.*;
 public class Controller {
     @GetMapping("/test")
     public ResponseEntity<String> test(){
-        return ResponseEntity.ok("test 5");
+        return ResponseEntity.ok("test 6");
     }
 }
