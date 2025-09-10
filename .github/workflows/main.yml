@@ -45,7 +45,7 @@ jobs:
           host: 121.140.125.176
           username: test
           password: qwer1234
-          port: 22
+          port: 114
           script: |
             docker pull gaangstar/back:latest || true
             docker rm -f back 2>/dev/null || true
